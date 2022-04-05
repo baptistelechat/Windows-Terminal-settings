@@ -1,0 +1,14 @@
+Invoke-WebRequest -Uri "https://github.com/microsoft/winget-cli/releases/download/v1.1.12653/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -OutFile "C:\PS\WinGet.msixbundle"
+Add-AppxPackage "C:\PS\WinGet.msixbundle"
+
+
+Get-AppPackage *Microsoft.DesktopAppInstaller*|select Name,PackageFullName
+
+(Get-AppPackage *Microsoft.DesktopAppInstaller*|select Name,PackageFullName|Measure-Object).Count
+
+Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* |Where-Object -Property DisplayName -Like "Revit*" | Select-Object -Property DisplayName
+
+Write-Host "Red on white text." -ForegroundColor red -BackgroundColor white
+
+
+$Age = Read-Host "Please enter your age"
