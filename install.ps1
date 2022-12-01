@@ -63,5 +63,15 @@ Copy-Item -Path ".\src\myBubblesextraTheme.omp.json" -Destination "~/Documents/W
 Write-Host ""
 Write-Host "----------------------------------------------------"
 
+Write-Host "----------------------------------------------------"
+Write-Host "Active Autocomplete"
+Write-Host ""
+Get-InstalledModule -Name psreadline -AllVersions | Uninstall-Module
+Install-Module PSReadLine -Force
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
+Write-Host ""
+Write-Host "----------------------------------------------------"
+
 wt
 

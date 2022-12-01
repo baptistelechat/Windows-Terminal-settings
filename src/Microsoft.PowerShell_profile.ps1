@@ -3,3 +3,6 @@
 oh-my-posh init pwsh --config ~/Documents/WindowsPowerShell/myBubblesextraTheme.omp.json | Invoke-Expression
 # Set-PoshPrompt -Theme bubblesextra
 Import-Module -Name Terminal-Icons
+
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
